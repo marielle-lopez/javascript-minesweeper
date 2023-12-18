@@ -19,7 +19,7 @@ function setMines() {
     let c = Math.floor(Math.random() * columns);
     let id = `${r}-${c}`;
 
-    if (minesLocation.includes(id)) {
+    if (!minesLocation.includes(id)) {
       minesLocation.push(id);
       minesLeft -= 1;
     }
