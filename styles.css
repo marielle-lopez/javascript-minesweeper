@@ -1,0 +1,59 @@
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
+  border: 10px solid darkgray;
+  background-color: lightgray;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.board__tile {
+  width: 48px;
+  height: 48px;
+  border: 1px solid whitesmoke;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board__tile--clicked {
+  background-color: darkgrey;
+}
+.board__tile--blue {
+  color: blue;
+}
+.board__tile--green {
+  color: green;
+}
+.board__tile--red {
+  color: red;
+}
+.board__tile--navy {
+  color: navy;
+}
+.board__tile--brown {
+  color: brown;
+}
+.board__tile--teal {
+  color: teal;
+}
+.board__tile--black {
+  color: black;
+}
+.board__tile--gray {
+  color: gray;
+}
+
+.flag-button {
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+  background-color: lightgray;
+  border: none;
+}

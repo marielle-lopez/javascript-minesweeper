@@ -1,1 +1,13 @@
 @use "./mixins";
+
+.body {
+  @include mixins.body;
+}
+
+.board {
+  @include mixins.board;
+}
+
+.flag-button {
+  @include mixins.flag-button;
+}
