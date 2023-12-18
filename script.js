@@ -53,6 +53,10 @@ function setFlag() {
 }
 
 function clickTile() {
+  if (gameOver || this.classList.contains("board__tile--clicked")) {
+    return;
+  }
+
   let tile = this;
 
   if (flagEnabled) {
@@ -94,6 +98,14 @@ function checkMines(r, c) {
     return;
   }
 
+  if (board[r][c].classList.contains("board__tile--clicked")) {
+    return;
+  }
+
+  board[r][c].classList.add("board__tile--clicked");
+
+  tilesClicked += 1;
+
   let minesFound = 0;
 
   minesFound += checkTile(r - 1, c - 1);
@@ -108,6 +120,20 @@ function checkMines(r, c) {
   if (minesFound > 0) {
     board[r][c].innerText = minesFound;
     board[r][c].classList.add("board__tile--" + minesFound.toString());
+  } else {
+    checkMines(r - 1, c - 1);
+    checkMines(r - 1, c);
+    checkMines(r - 1, c + 1);
+    checkMines(r, c - 1);
+    checkMines(r, c + 1);
+    checkMines(r + 1, c - 1);
+    checkMines(r + 1, c);
+    checkMines(r + 1, c + 1);
+  }
+
+  if (tilesClicked == rows * columns - minesCount) {
+    document.querySelector("#mines-count").innerText = "Cleared!";
+    gameOver = true;
   }
 }
 
