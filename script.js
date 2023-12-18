@@ -11,9 +11,18 @@ window.onload = function () {
   startGame();
 };
 
+function setMines() {
+  minesLocation.push("2-2");
+  minesLocation.push("2-3");
+  minesLocation.push("5-6");
+  minesLocation.push("3-4");
+  minesLocation.push("1-1");
+}
+
 function startGame() {
   document.querySelector("#mines-count").innerText = minesCount;
   document.querySelector("#flag-button").addEventListener("click", setFlag);
+  setMines();
 
   for (let r = 0; r < rows; r++) {
     let row = [];
@@ -52,5 +61,12 @@ function clickTile() {
     } else if (tile.innerText == "🚩") {
       tile.innerText = "";
     }
+    return;
+  }
+
+  if (minesLocation.includes(tile.id)) {
+    alert("Game over!");
+    gameOver = true;
+    return;
   }
 }
