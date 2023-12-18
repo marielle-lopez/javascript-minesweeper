@@ -25,28 +25,28 @@
 .board__tile--clicked {
   background-color: darkgrey;
 }
-.board__tile--blue {
+.board__tile--1 {
   color: blue;
 }
-.board__tile--green {
+.board__tile--2 {
   color: green;
 }
-.board__tile--red {
+.board__tile--3 {
   color: red;
 }
-.board__tile--navy {
+.board__tile--4 {
   color: navy;
 }
-.board__tile--brown {
+.board__tile--5 {
   color: brown;
 }
-.board__tile--teal {
+.board__tile--6 {
   color: teal;
 }
-.board__tile--black {
+.board__tile--7 {
   color: black;
 }
-.board__tile--gray {
+.board__tile--8 {
   color: gray;
 }
 
